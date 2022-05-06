@@ -41,15 +41,36 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = Config.JavaVersion
+        targetCompatibility = Config.JavaVersion
     }
 
-    kotlinOptions { jvmTarget = "1.8" }
+    kotlinOptions { jvmTarget = Config.JavaVersion.toString() }
+
+    buildFeatures { compose = true }
+
+    composeOptions { kotlinCompilerExtensionVersion = Dependencies.Compose.Version }
 }
 
 dependencies {
     implementation(Dependencies.AndroidX.Core)
+
+    implementation(Dependencies.Compose.Activity)
+    implementation(Dependencies.Compose.Compiler)
+    implementation(Dependencies.Compose.Ui)
+    implementation(Dependencies.Compose.UiUtil)
+    implementation(Dependencies.Compose.Foundation)
+    implementation(Dependencies.Compose.Tooling)
+    implementation(Dependencies.Compose.Preview)
+    implementation(Dependencies.Compose.Pager)
+    implementation(Dependencies.Compose.PagerIndicator)
+    implementation(Dependencies.Compose.Material)
+    implementation(Dependencies.Compose.IconsCore)
+    implementation(Dependencies.Compose.IconsExtended)
+    implementation(Dependencies.Compose.SwipeRefresh)
+    implementation(Dependencies.Compose.Insets)
+    implementation(Dependencies.Compose.InsetsUi)
+    implementation(Dependencies.Compose.UiController)
 
     implementation(Dependencies.Google.Material)
 
