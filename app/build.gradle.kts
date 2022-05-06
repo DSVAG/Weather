@@ -21,11 +21,20 @@ android {
     }
 
     buildTypes {
-        release {
+        getByName("debug") {
+            isDebuggable = true
+            isShrinkResources = false
+            isMinifyEnabled = false
+            applicationIdSuffix = ".dev"
+        }
+
+        getByName("release") {
+            isDebuggable = false
+            isShrinkResources = true
             isMinifyEnabled = true
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                getDefaultProguardFile(name = "proguard-android-optimize.txt"),
+                "proguard-rules.pro",
             )
         }
     }
