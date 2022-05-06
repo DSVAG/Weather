@@ -9,15 +9,15 @@ repositories {
 }
 
 android {
-    compileSdk = 31
-    buildToolsVersion = "31.0.0"
+    compileSdk = Config.CompileSdk
+    buildToolsVersion = Config.BuildTools
 
     defaultConfig {
-        applicationId = "com.dsvag.weather"
-        minSdk = 26
-        targetSdk = 31
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = Config.PackageName
+        minSdk = Config.MinSdk
+        targetSdk = Config.TargetSdk
+        versionCode = Config.VersionCode
+        versionName = Config.VersionName
     }
 
     buildTypes {
@@ -48,8 +48,10 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.7.0")
-    implementation("androidx.appcompat:appcompat:1.4.1")
-    implementation("com.google.android.material:material:1.5.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.3")
+    implementation(Dependencies.AndroidX.Core)
+
+    implementation(Dependencies.Google.Material)
+
+    implementation(Dependencies.Kotlin.Stdlib)
+    implementation(Dependencies.Kotlin.StdlibJdk8)
 }
