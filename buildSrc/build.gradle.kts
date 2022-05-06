@@ -3,9 +3,20 @@ plugins {
     `kotlin-dsl`
 }
 
+group = "com.dsvag.lib"
+
 repositories {
     google()
     mavenCentral()
+}
+
+gradlePlugin {
+    plugins {
+        create("resolutionStrategy") {
+            id = "$group.resolutionStrategy"
+            implementationClass = "com.dsvag.lib.ResolutionStrategyPlugin"
+        }
+    }
 }
 
 dependencies {
