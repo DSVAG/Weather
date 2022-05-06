@@ -9,8 +9,8 @@ class ResolutionStrategyPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         target.configurations.configureEach {
             resolutionStrategy.force(
+                Dependencies.AndroidX.Core,
                 Dependencies.Compose.Compiler,
-                Dependencies.Google.Material,
                 Dependencies.Kotlin.Stdlib,
                 Dependencies.Kotlin.StdlibJdk8,
             )

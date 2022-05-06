@@ -1,6 +1,7 @@
 object Dependencies {
 
     object AndroidX {
+        const val Appcompat = "androidx.appcompat:appcompat:1.4.1"
         const val Core = "androidx.core:core-ktx:1.7.0"
     }
 
@@ -34,10 +35,6 @@ object Dependencies {
         const val Pager = "com.google.accompanist:accompanist-pager:$AccompanistVersion"
         const val PagerIndicator =
             "com.google.accompanist:accompanist-pager-indicators:$AccompanistVersion"
-    }
-
-    object Google {
-        const val Material = "com.google.android.material:material:1.5.0"
     }
 
     object Kotlin {
