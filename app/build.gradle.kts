@@ -53,6 +53,7 @@ android {
 }
 
 dependencies {
+    implementation(Dependencies.AndroidX.Appcompat)
     implementation(Dependencies.AndroidX.Core)
 
     implementation(Dependencies.Compose.Activity)
@@ -71,8 +72,6 @@ dependencies {
     implementation(Dependencies.Compose.Insets)
     implementation(Dependencies.Compose.InsetsUi)
     implementation(Dependencies.Compose.UiController)
-
-    implementation(Dependencies.Google.Material)
 
     implementation(Dependencies.Kotlin.Stdlib)
     implementation(Dependencies.Kotlin.StdlibJdk8)
