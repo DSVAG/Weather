@@ -11,7 +11,7 @@ pluginManagement {
                 useModule("com.android.tools.build:gradle:7.2.1")
             }
             if (requested.id.id.startsWith("org.jetbrains.kotlin")) {
-                useVersion("1.7.00")
+                useVersion("1.7.0")
             }
         }
     }

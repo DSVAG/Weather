@@ -1,4 +1,4 @@
-import org.gradle.api.JavaVersion.VERSION_11
+import org.gradle.api.JavaVersion.VERSION_17
 
 object Config {
 
@@ -13,5 +13,5 @@ object Config {
 
     const val PackageName = "com.dsvag.weather"
 
-    val JavaVersion = VERSION_11
+    val JavaVersion = VERSION_17
 }
