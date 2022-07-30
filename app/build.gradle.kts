@@ -12,6 +12,8 @@ repositories {
 android {
     compileSdk = Config.CompileSdk
     buildToolsVersion = Config.BuildTools
+    namespace = Config.PackageName
+
 
     defaultConfig {
         applicationId = Config.PackageName
@@ -69,8 +71,6 @@ dependencies {
     implementation(Dependencies.Compose.IconsCore)
     implementation(Dependencies.Compose.IconsExtended)
     implementation(Dependencies.Compose.SwipeRefresh)
-    implementation(Dependencies.Compose.Insets)
-    implementation(Dependencies.Compose.InsetsUi)
     implementation(Dependencies.Compose.UiController)
 
     implementation(Dependencies.Kotlin.Stdlib)

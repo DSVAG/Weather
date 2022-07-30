@@ -6,12 +6,13 @@ object Dependencies {
     }
 
     object Compose {
-        const val Version = "1.1.1"
-        private const val AccompanistVersion = "0.23.1"
+        const val Version = "1.2.0"
+        const val CompilerVersion = "1.2.0"
+        private const val AccompanistVersion = "0.25.0"
 
         const val Activity = "androidx.activity:activity-compose:1.4.0"
 
-        const val Compiler = "androidx.compose.compiler:compiler:$Version"
+        const val Compiler = "androidx.compose.compiler:compiler:$CompilerVersion"
 
         const val Ui = "androidx.compose.ui:ui:$Version"
         const val Tooling = "androidx.compose.ui:ui-tooling:$Version"
@@ -27,8 +28,6 @@ object Dependencies {
         const val SwipeRefresh =
             "com.google.accompanist:accompanist-swiperefresh:$AccompanistVersion"
 
-        const val Insets = "com.google.accompanist:accompanist-insets:$AccompanistVersion"
-        const val InsetsUi = "com.google.accompanist:accompanist-insets-ui:$AccompanistVersion"
         const val UiController =
             "com.google.accompanist:accompanist-systemuicontroller:$AccompanistVersion"
 
@@ -38,7 +37,7 @@ object Dependencies {
     }
 
     object Kotlin {
-        private const val Version = "1.6.10"
+        private const val Version = "1.7.0"
 
         const val StdlibJdk8 = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$Version"
         const val Stdlib = "org.jetbrains.kotlin:kotlin-stdlib:$Version"
