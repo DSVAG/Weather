@@ -1,0 +1,55 @@
+[versions]
+buildtools = "33.0.0"
+minsdk = "26"
+compilesdk = "32"
+targetsdk = "32"
+agp = "7.2.1"
+# Kotlin
+kotlin = "1.7.0"
+# Ui
+accompanist = "0.25.0"
+compose = "1.2.0"
+composecompiler = "1.2.0"
+# Android
+appcompat = "1.4.2"
+ktx = "1.8.0"
+
+[libraries]
+# AndroidX
+appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+ktx = { module = "androidx.core:core-ktx", version.ref = "ktx" }
+# Compose
+accompanist-swiperefresh = { module = "com.google.accompanist:accompanist-swiperefresh", version.ref = "accompanist" }
+accompanist-systemuicontroller = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanist" }
+accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanist" }
+activity-compose = { module = "androidx.activity:activity-compose", version = "1.5.1" }
+compose-compiler = { module = "androidx.compose.compiler:compiler", version.ref = "composecompiler" }
+compose-animation = { module = "androidx.compose.animation:animation", version.ref = "compose" }
+compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
+compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
+compose-ui-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
+compose-ui-util = { module = "androidx.compose.ui:ui-util", version.ref = "compose" }
+compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
+compose-material = { module = "androidx.compose.material:material", version.ref = "compose" }
+compose-runtime = { module = "androidx.compose.runtime:runtime", version.ref = "compose" }
+# Kotlin
+stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+stdlib8 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.ref = "kotlin" }
+
+[bundles]
+compose = [
+    "compose-compiler",
+    "compose-animation",
+    "compose-ui",
+    "compose-ui-tooling",
+    "compose-ui-preview",
+    "compose-ui-util",
+    "compose-foundation",
+    "compose-material",
+    "activity-compose",
+]
+accompanist = [
+    "accompanist-swiperefresh",
+    "accompanist-systemuicontroller",
+    "accompanist-permissions",
+]
