@@ -5,13 +5,16 @@ pluginManagement {
         mavenCentral()
     }
 
-    resolutionStrategy {
-        eachPlugin {
-            if (requested.id.id.startsWith("com.android")) {
-                useModule("com.android.tools.build:gradle:7.2.1")
+    resolutionStrategy.eachPlugin {
+        when {
+            requested.id.id.startsWith("com.android") -> {
+                useVersion("7.2.1")
             }
-            if (requested.id.id.startsWith("org.jetbrains.kotlin")) {
+            requested.id.id.startsWith("org.jetbrains.kotlin") -> {
                 useVersion("1.7.0")
+            }
+            requested.id.id.startsWith("androidx.compose") -> {
+                useVersion("1.2.0")
             }
         }
     }

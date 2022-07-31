@@ -1,6 +1,5 @@
 plugins {
     id("com.android.application")
-    id("com.dsvag.lib.resolutionStrategy")
     kotlin("android")
 }
 
@@ -10,17 +9,16 @@ repositories {
 }
 
 android {
-    compileSdk = Config.CompileSdk
-    buildToolsVersion = Config.BuildTools
-    namespace = Config.PackageName
-
+    compileSdk = libs.versions.compilesdk.get().toInt()
+    buildToolsVersion = libs.versions.buildtools.get()
+    namespace = "com.dsvag.weather"
 
     defaultConfig {
-        applicationId = Config.PackageName
-        minSdk = Config.MinSdk
-        targetSdk = Config.TargetSdk
-        versionCode = Config.VersionCode
-        versionName = Config.VersionName
+        applicationId = "com.dsvag.weather"
+        minSdk = libs.versions.minsdk.get().toInt()
+        targetSdk = libs.versions.targetsdk.get().toInt()
+        versionCode = 1
+        versionName = "1.0"
     }
 
     buildTypes {
@@ -43,36 +41,35 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = Config.JavaVersion
-        targetCompatibility = Config.JavaVersion
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     kotlinOptions { jvmTarget = "17" }
 
     buildFeatures { compose = true }
 
-    composeOptions { kotlinCompilerExtensionVersion = Dependencies.Compose.Version }
+    composeOptions { kotlinCompilerExtensionVersion = libs.versions.composecompiler.get() }
 }
 
 dependencies {
-    implementation(Dependencies.AndroidX.Appcompat)
-    implementation(Dependencies.AndroidX.Core)
+    implementation(libs.appcompat)
+    implementation(libs.ktx)
 
-    implementation(Dependencies.Compose.Activity)
-    implementation(Dependencies.Compose.Compiler)
-    implementation(Dependencies.Compose.Ui)
-    implementation(Dependencies.Compose.UiUtil)
-    implementation(Dependencies.Compose.Foundation)
-    implementation(Dependencies.Compose.Tooling)
-    implementation(Dependencies.Compose.Preview)
-    implementation(Dependencies.Compose.Pager)
-    implementation(Dependencies.Compose.PagerIndicator)
-    implementation(Dependencies.Compose.Material)
-    implementation(Dependencies.Compose.IconsCore)
-    implementation(Dependencies.Compose.IconsExtended)
-    implementation(Dependencies.Compose.SwipeRefresh)
-    implementation(Dependencies.Compose.UiController)
+    implementation(libs.accompanist.swiperefresh)
+    implementation(libs.accompanist.systemuicontroller)
+    implementation(libs.accompanist.permissions)
+    implementation(libs.activity.compose)
+    implementation(libs.compose.compiler)
+    implementation(libs.compose.animation)
+    implementation(libs.compose.ui)
+    implementation(libs.compose.ui.tooling)
+    implementation(libs.compose.ui.preview)
+    implementation(libs.compose.ui.util)
+    implementation(libs.compose.foundation)
+    implementation(libs.compose.material)
+    implementation(libs.compose.runtime)
 
-    implementation(Dependencies.Kotlin.Stdlib)
-    implementation(Dependencies.Kotlin.StdlibJdk8)
+    implementation(libs.stdlib)
+    implementation(libs.stdlib8)
 }
